@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Taharina Tasnim — AI Scientist & Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ivory: #f8f5f0;
+  --warm-white: #fdfcf9;
+  --ink: #1a1714;
+  --ink-light: #3d3830;
+  --muted: #8c8278;
+  --muted-light: #b8b0a8;
+  --accent: #b5714e;
+  --accent-light: #d4987a;
+  --rule: #e2ddd8;
+  --card-bg: #f3efe9;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', sans-serif;
+  --mono: 'Courier Prime', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--warm-white);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0; opacity: 1;
+}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 60px; height: 68px;
+  background: rgba(253,252,249,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { font-family: var(--serif); font-size: 18px; font-weight: 400; font-style: italic; color: var(--ink); text-decoration: none; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--sans); font-size: 12px; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.25s; }
+.nav-links a:hover { color: var(--accent); }
+section { position: relative; z-index: 1; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 48px; }
+
+/* HERO */
+#hero { min-height: 100vh; display: flex; align-items: center; padding-top: 68px; border-bottom: 1px solid var(--rule); }
+.hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; width: 100%; padding: 80px 0; }
+.hero-label { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+.hero-label::before { content: ''; width: 40px; height: 1px; background: var(--accent); display: inline-block; flex-shrink: 0; }
+h1 { font-family: var(--serif); font-size: clamp(52px, 6vw, 84px); font-weight: 300; line-height: 1.0; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.01em; }
+h1 em { font-style: italic; color: var(--accent); font-weight: 300; }
+.hero-title-line2 { font-family: var(--serif); font-size: clamp(18px, 2vw, 28px); font-weight: 300; color: var(--muted); font-style: italic; margin-bottom: 36px; }
+.hero-desc { font-size: 16px; color: var(--ink-light); max-width: 460px; line-height: 1.85; margin-bottom: 44px; font-weight: 300; }
+.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 28px; font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; cursor: pointer; border: none; }
+.btn-primary { background: var(--ink); color: var(--warm-white); }
+.btn-primary:hover { background: var(--accent); }
+.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--rule); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.hero-card { background: var(--card-bg); border: 1px solid var(--rule); padding: 48px; position: relative; }
+.hero-card::before { content: ''; position: absolute; top: 12px; left: 12px; right: -12px; bottom: -12px; border: 1px solid var(--rule); z-index: -1; }
+.card-role { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 20px; }
+.card-name { font-family: var(--serif); font-size: 36px; font-weight: 400; color: var(--ink); margin-bottom: 4px; line-height: 1.2; }
+.card-name-sub { font-family: var(--serif); font-size: 16px; font-style: italic; color: var(--muted); margin-bottom: 32px; }
+.card-divider { border: none; border-top: 1px solid var(--rule); margin: 24px 0; }
+.card-meta { display: flex; flex-direction: column; gap: 10px; }
+.card-meta-item { display: flex; align-items: flex-start; gap: 12px; font-size: 13px; }
+.card-meta-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 7px; }
+.card-meta-label { color: var(--muted); font-size: 11px; font-family: var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.card-meta-value { color: var(--ink-light); font-weight: 400; }
+.social-row { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+.social-link { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-decoration: none; text-transform: uppercase; border-bottom: 1px solid var(--rule); padding-bottom: 2px; transition: all 0.2s; }
+.social-link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* SECTION HEADERS */
+.section-header { display: flex; align-items: baseline; gap: 20px; margin-bottom: 56px; }
+.section-num { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.1em; }
+h2 { font-family: var(--serif); font-size: clamp(32px, 3.5vw, 48px); font-weight: 300; color: var(--ink); line-height: 1.15; }
+h2 em { font-style: italic; color: var(--accent); }
+.section-rule { flex: 1; height: 1px; background: var(--rule); align-self: center; }
+
+/* ABOUT */
+#about { padding: 120px 0; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.about-body { font-size: 16px; color: var(--ink-light); font-weight: 300; }
+.about-body p { margin-bottom: 22px; line-height: 1.9; }
+.aside-block { margin-bottom: 40px; }
+.aside-label { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+.skill-group { margin-bottom: 16px; }
+.skill-group-name { font-size: 12px; font-weight: 600; color: var(--ink); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 7px; }
+.skill-list { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.8; }
+.stat-row { display: flex; gap: 0; border: 1px solid var(--rule); margin-top: 40px; }
+.stat { flex: 1; padding: 24px 20px; text-align: center; border-right: 1px solid var(--rule); }
+.stat:last-child { border-right: none; }
+.stat-num { font-family: var(--serif); font-size: 40px; font-weight: 300; color: var(--accent); display: block; line-height: 1; margin-bottom: 6px; }
+.stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--mono); }
+
+/* EXPERIENCE */
+#experience { padding: 120px 0; border-top: 1px solid var(--rule); }
+.exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 48px; padding: 40px 0; border-bottom: 1px solid var(--rule); }
+.exp-item:first-of-type { border-top: 1px solid var(--rule); }
+.exp-date { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 8px; }
+.exp-company { font-family: var(--serif); font-size: 16px; font-style: italic; color: var(--muted); }
+.exp-loc { font-size: 12px; color: var(--muted-light); margin-top: 4px; font-family: var(--mono); }
+.exp-role { font-family: var(--serif); font-size: 24px; font-weight: 400; color: var(--ink); margin-bottom: 16px; line-height: 1.3; }
+.exp-bullets { list-style: none; }
+.exp-bullets li { font-size: 15px; color: var(--ink-light); font-weight: 300; padding: 5px 0 5px 18px; position: relative; line-height: 1.75; }
+.exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+
+/* PROJECTS */
+#projects { padding: 120px 0; border-top: 1px solid var(--rule); }
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.project-card { background: var(--warm-white); padding: 40px; transition: background 0.25s; position: relative; }
+.project-card:hover { background: var(--card-bg); }
+.project-card.featured { grid-column: span 2; background: var(--card-bg); border-bottom: 1px solid var(--rule); }
+.project-num { font-family: var(--mono); font-size: 11px; color: var(--muted-light); letter-spacing: 0.15em; margin-bottom: 20px; }
+.project-title { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+.project-stack { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 16px; text-transform: uppercase; }
+.project-desc { font-size: 14px; color: var(--ink-light); font-weight: 300; line-height: 1.85; }
+
+/* RESEARCH */
+#research { padding: 120px 0; border-top: 1px solid var(--rule); }
+.research-card { display: grid; grid-template-columns: 200px 1fr; gap: 48px; padding: 48px; background: var(--card-bg); border: 1px solid var(--rule); }
+.research-status { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 3px 10px; margin-bottom: 16px; }
+.research-label-text { font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--muted); line-height: 1.5; }
+.research-title { font-family: var(--serif); font-size: 28px; font-weight: 400; color: var(--ink); margin-bottom: 10px; line-height: 1.25; }
+.research-subtitle { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 20px; text-transform: uppercase; }
+.research-desc { font-size: 15px; color: var(--ink-light); font-weight: 300; line-height: 1.85; }
+
+/* PUBLICATIONS */
+#publications { padding: 120px 0; border-top: 1px solid var(--rule); }
+.pub-item { display: grid; grid-template-columns: 60px 1fr auto; gap: 32px; align-items: start; padding: 32px 0; border-bottom: 1px solid var(--rule); }
+.pub-item:first-of-type { border-top: 1px solid var(--rule); }
+.pub-index { font-family: var(--serif); font-size: 40px; font-weight: 300; color: var(--rule); line-height: 1; padding-top: 4px; }
+.pub-title { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 6px; line-height: 1.35; }
+.pub-authors { font-size: 13px; color: var(--muted); font-weight: 300; margin-bottom: 4px; font-style: italic; }
+.pub-venue { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+.pub-link { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); text-decoration: none; white-space: nowrap; align-self: center; border-bottom: 1px solid transparent; transition: border-color 0.2s; padding-top: 8px; }
+.pub-link:hover { border-color: var(--accent); }
+
+/* CONTACT */
+#contact { padding: 120px 0; border-top: 1px solid var(--rule); }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.contact-text p { font-size: 16px; color: var(--ink-light); font-weight: 300; line-height: 1.85; margin-bottom: 40px; max-width: 400px; }
+.contact-items { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--rule); }
+.contact-item { display: flex; align-items: center; gap: 20px; padding: 22px 28px; text-decoration: none; border-bottom: 1px solid var(--rule); transition: background 0.2s; color: inherit; }
+.contact-item:last-child { border-bottom: none; }
+.contact-item:hover { background: var(--card-bg); }
+.contact-item-icon { font-family: var(--mono); font-size: 14px; color: var(--accent); width: 28px; flex-shrink: 0; text-align: center; }
+.contact-item-body { flex: 1; }
+.contact-item-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 2px; }
+.contact-item-value { font-size: 14px; color: var(--ink-light); }
+.contact-item-arrow { color: var(--rule); font-size: 16px; transition: color 0.2s, transform 0.2s; }
+.contact-item:hover .contact-item-arrow { color: var(--accent); transform: translateX(4px); }
+
+/* FOOTER */
+footer { padding: 40px 0; border-top: 1px solid var(--rule); position: relative; z-index: 1; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; }
+.footer-name { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--muted); }
+.footer-copy { font-family: var(--mono); font-size: 11px; color: var(--muted-light); letter-spacing: 0.1em; }
+
+/* SCROLL REVEAL */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero-inner, .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  .exp-item { grid-template-columns: 1fr; gap: 12px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card.featured { grid-column: span 1; }
+  .research-card { grid-template-columns: 1fr; gap: 24px; }
+  .pub-item { grid-template-columns: 40px 1fr; gap: 16px; }
+  .pub-link { display: none; }
+  .container { padding: 0 24px; }
+  #about, #experience, #projects, #research, #publications, #contact { padding: 80px 0; }
+  .hero-card::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">Taharina Tasnim</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-label">AI Scientist &amp; Software Engineer</div>
+        <h1>Taharina<br><em>Tasnim</em></h1>
+        <p class="hero-title-line2">Building AI that ships to the real world</p>
+        <p class="hero-desc">Computer vision, on-device deep learning, and ML deployment for enterprise hardware at Zebra Technologies. M.S. Computer Engineering, Stony Brook University.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-role">Currently</div>
+        <div class="card-name">Software Engineer II</div>
+        <div class="card-name-sub">Zebra Technologies · Holtsville, NY</div>
+        <hr class="card-divider">
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <div class="card-meta-dot"></div>
+            <div>
+              <div class="card-meta-label">Focus</div>
+              <div class="card-meta-value">Computer Vision · On-Device ML · Android</div>
+            </div>
+          </div>
+          <div class="card-meta-item">
+            <div class="card-meta-dot"></div>
+            <div>
+              <div class="card-meta-label">Education</div>
+              <div class="card-meta-value">M.S. Computer Engineering, Stony Brook</div>
+            </div>
+          </div>
+          <div class="card-meta-item">
+            <div class="card-meta-dot"></div>
+            <div>
+              <div class="card-meta-label">Research</div>
+              <div class="card-meta-value">DNABERT-2 · Human Genome · Clustering</div>
+            </div>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="https://github.com/minionpika" target="_blank" class="social-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/taharina-tasnim-3a25a3125/" target="_blank" class="social-link">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=miljqWQAAAAJ&hl=en" target="_blank" class="social-link">Scholar</a>
+          <a href="mailto:tasnim.taharina@gmail.com" class="social-link">Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2>About <em>Me</em></h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p>I'm an AI Scientist and Software Engineer at Zebra Technologies, where I design, train, and deploy production computer vision and deep learning models onto enterprise Android hardware used at scale across global warehouses and logistics operations.</p>
+        <p>My work spans the full ML lifecycle — from architecting model pipelines and fine-tuning pretrained networks, to Zebra AI Suite SDK integration, performance benchmarking, and on-device TFLite deployment. I thrive at the intersection of rigorous research and real-world engineering constraints.</p>
+        <p>Outside of Zebra, I'm independently researching transformer-based genomic language models — applying DNABERT-2 to human genome sequence analysis and unsupervised clustering — building on my undergraduate thesis in bioinformatics at BUET.</p>
+        <div class="stat-row">
+          <div class="stat"><span class="stat-num">98%</span><div class="stat-label">CV Accuracy</div></div>
+          <div class="stat"><span class="stat-num">25%</span><div class="stat-label">Scan Lift</div></div>
+          <div class="stat"><span class="stat-num">1M+</span><div class="stat-label">Users Reached</div></div>
+        </div>
+      </div>
+      <div class="about-aside reveal">
+        <div class="aside-block">
+          <div class="aside-label">AI &amp; Machine Learning</div>
+          <div class="skill-group">
+            <div class="skill-group-name">Frameworks</div>
+            <div class="skill-list">PyTorch · TensorFlow · Keras · HuggingFace · YOLOv8 · OpenCV · scikit-learn</div>
+          </div>
+          <div class="skill-group" style="margin-top:14px">
+            <div class="skill-group-name">Deployment</div>
+            <div class="skill-list">TFLite · Android SDK · Zebra AI Suite · INT8 / FP16 Quantization · On-Device Inference</div>
+          </div>
+        </div>
+        <div class="aside-block">
+          <div class="aside-label">Languages</div>
+          <div class="skill-list">Python · Java · Kotlin · C · C++ · C# · TypeScript</div>
+        </div>
+        <div class="aside-block">
+          <div class="aside-label">Infrastructure</div>
+          <div class="skill-list">AWS · GCP · Docker · Kubernetes · Jenkins · Git · Perforce · Gerrit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2>Experience</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">Jan 2025 — Present</div>
+        <div class="exp-company">Zebra Technologies</div>
+        <div class="exp-loc">Holtsville, NY</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Software Engineer II</div>
+        <ul class="exp-bullets">
+          <li>Designed and trained a PyTorch CV model achieving 98% accuracy detecting expiration dates on packaging; deployed to production for enterprise compliance automation.</li>
+          <li>Led end-to-end Zebra AI Suite integration — model integration, SDK integration, and performance benchmarking — into Android DataWedge applications on Zebra scanners.</li>
+          <li>Collaborated cross-functionally with BU managers to resolve critical library blockers, driving scanning accuracy to 95%+.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">May 2024 — Aug 2024</div>
+        <div class="exp-company">Zebra Technologies</div>
+        <div class="exp-loc">Holtsville, NY</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Intern — Mobile Computing Engineer</div>
+        <ul class="exp-bullets">
+          <li>Built an image qualification algorithm for barcode decoding, optimized for real-time Android performance; improved scan success rate by 25%.</li>
+          <li>Designed a fruit-quality assessment solution using signal processing and CV; awarded Top 3 at company-wide innovation event.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">May 2019 — Aug 2021</div>
+        <div class="exp-company">Samsung R&amp;D Institute</div>
+        <div class="exp-loc">Dhaka, Bangladesh</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Software Engineer I</div>
+        <ul class="exp-bullets">
+          <li>Delivered WearOS and Tizen Galaxy Watch features (Settings, PPT Controller, Compass, Camera Controller) in Java and C++.</li>
+          <li>PPT Controller shipped on-time for Watch 5 series, reaching 1M+ users globally.</li>
+          <li>Resolved 120+ software defects across Agile sprints with post-release maintenance accountability.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2>Selected <em>Projects</em></h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card featured reveal">
+        <div class="project-num">Project 01 — Featured</div>
+        <div class="project-title">ParcelScan — Damaged Packaging Detection</div>
+        <div class="project-stack">EfficientNetV2B0 · YOLOv8 · TFLite · Android · TensorFlow</div>
+        <div class="project-desc">End-to-end warehouse demo application detecting damaged packaging in real time. Two-model pipeline: a fine-tuned EfficientNetV2B0 classifier and YOLOv8n object detector, both quantized and exported to TFLite for on-device Android inference. Custom 500-image dataset augmented to 350 per class, with INT8 quantization producing a ~20 MB model. Custom NMS logic for the YOLOv8 [1, 84, 8400] output tensor implemented in Android.</div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">Project 02</div>
+        <div class="project-title">Bayesian Classification on Cardiotocogram Data</div>
+        <div class="project-stack">Python · Bayesian Learning · scikit-learn</div>
+        <div class="project-desc">Applied Sequential Bayesian Learning with Gaussian basis functions. Achieved 51.6% faster training versus a ridge regression baseline on the Cardiotocogram medical dataset.</div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">Project 03</div>
+        <div class="project-title">Denoising Diffusion Probabilistic Model</div>
+        <div class="project-stack">PyTorch · DDPM · Generative Modelling</div>
+        <div class="project-desc">Comprehensive survey and prototype implementation of Denoising Diffusion Probabilistic Models for generative image modelling from statistical first principles.</div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">Project 04</div>
+        <div class="project-title">Local Feature Descriptor &amp; Model Fitting</div>
+        <div class="project-stack">Python · OpenCV · Computer Vision</div>
+        <div class="project-desc">End-to-end CV pipeline combining Gaussian filtering, Harris Corner Detection, and normalized gradient direction histograms for robust edge and corner detection.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
+      <h2>Independent <em>Research</em></h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="research-card reveal">
+      <div>
+        <div class="research-status">Ongoing</div>
+        <div class="research-label-text">2025 — Present<br>Independent · Remote</div>
+      </div>
+      <div>
+        <div class="research-title">DNABERT-2 Genomic Analysis &amp; Clustering</div>
+        <div class="research-subtitle">Transformers · Bioinformatics · HuggingFace · Python</div>
+        <div class="research-desc">Investigating the capability of DNABERT-2 — a pre-trained transformer model for genomic sequences — to generate contextual embeddings from human genome data. Applying unsupervised clustering (K-Means, UMAP) to identify functional and structural patterns across genomic regions. This work extends a long-standing interest in bioinformatics, rooted in an undergraduate thesis on alignment-free phylogeny reconstruction, into the era of large language models applied to biological sequences.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">05</span>
+      <h2>Publications</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="pub-item reveal">
+      <div class="pub-index">01</div>
+      <div class="pub-body">
+        <div class="pub-title">Automated Cost Reduction While Using Multiple SIMs in a Single Mobile Device</div>
+        <div class="pub-authors">P. Chakraborty, S. Arabi, A. Siddiqua, T. Tasnim, et al.</div>
+        <div class="pub-venue">4th NSysS · 2017 · IEEE</div>
+      </div>
+      <a href="https://ieeexplore.ieee.org/abstract/document/8267800" target="_blank" class="pub-link">View ↗</a>
+    </div>
+
+    <div class="pub-item reveal">
+      <div class="pub-index">02</div>
+      <div class="pub-body">
+        <div class="pub-title">Service-Hub: A Better Approach for Developing the System of Online Marketing for Daily Services</div>
+        <div class="pub-authors">A. Bhattacharjee, T. Tasnim, et al.</div>
+        <div class="pub-venue">4th NSysS · 2017 · IEEE</div>
+      </div>
+      <a href="https://ieeexplore.ieee.org/abstract/document/8267801" target="_blank" class="pub-link">View ↗</a>
+    </div>
+
+    <div class="pub-item reveal">
+      <div class="pub-index">03</div>
+      <div class="pub-body">
+        <div class="pub-title">An Alignment-free Method for Phylogeny Reconstruction Using Maximum Likelihood</div>
+        <div class="pub-authors">T. Tasnim · Undergraduate Thesis, BUET</div>
+        <div class="pub-venue">BioRxiv Preprint · 2019</div>
+      </div>
+      <a href="https://www.biorxiv.org/content/10.1101/2019.12.13.875526v1.abstract" target="_blank" class="pub-link">View ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">06</span>
+      <h2>Get In <em>Touch</em></h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="contact-inner">
+      <div class="contact-text reveal">
+        <p>Open to AI Scientist, ML Engineer, and Computer Vision roles. Always happy to discuss research, on-device ML, genomics, or collaboration opportunities.</p>
+        <a href="mailto:tasnim.taharina@gmail.com" class="btn btn-primary">Send an Email</a>
+      </div>
+      <div class="contact-items reveal">
+        <a href="mailto:tasnim.taharina@gmail.com" class="contact-item">
+          <div class="contact-item-icon">✉</div>
+          <div class="contact-item-body">
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">tasnim.taharina@gmail.com</div>
+          </div>
+          <div class="contact-item-arrow">→</div>
+        </a>
+        <a href="https://github.com/minionpika" target="_blank" class="contact-item">
+          <div class="contact-item-icon">&lt;/&gt;</div>
+          <div class="contact-item-body">
+            <div class="contact-item-label">GitHub</div>
+            <div class="contact-item-value">github.com/minionpika</div>
+          </div>
+          <div class="contact-item-arrow">→</div>
+        </a>
+        <a href="https://www.linkedin.com/in/taharina-tasnim-3a25a3125/" target="_blank" class="contact-item">
+          <div class="contact-item-icon">in</div>
+          <div class="contact-item-body">
+            <div class="contact-item-label">LinkedIn</div>
+            <div class="contact-item-value">taharina-tasnim</div>
+          </div>
+          <div class="contact-item-arrow">→</div>
+        </a>
+        <a href="https://scholar.google.com/citations?user=miljqWQAAAAJ&hl=en" target="_blank" class="contact-item">
+          <div class="contact-item-icon">◎</div>
+          <div class="contact-item-body">
+            <div class="contact-item-label">Google Scholar</div>
+            <div class="contact-item-value">View Publications</div>
+          </div>
+          <div class="contact-item-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">Taharina Tasnim</span>
+      <span class="footer-copy">© 2025 · All rights reserved</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
