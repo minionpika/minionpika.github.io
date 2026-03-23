@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Taharina Tasnim — AI Scientist & Engineer</title>
+<title>Taharina Tasnim — Software Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -197,6 +197,7 @@ footer { padding: 40px 0; border-top: 1px solid var(--rule); position: relative;
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
@@ -234,7 +235,7 @@ footer { padding: 40px 0; border-top: 1px solid var(--rule); position: relative;
             <div class="card-meta-dot"></div>
             <div>
               <div class="card-meta-label">Education</div>
-              <div class="card-meta-value">M.S. Computer Engineering, Stony Brook</div>
+              <div class="card-meta-value">M.S. Computer Engineering, Stony Brook · B.Sc. CSE, BUET</div>
             </div>
           </div>
           <div class="card-meta-item">
@@ -268,6 +269,7 @@ footer { padding: 40px 0; border-top: 1px solid var(--rule); position: relative;
         <p>I'm an AI Scientist and Software Engineer at Zebra Technologies, where I design, train, and deploy production computer vision and deep learning models onto enterprise Android hardware used at scale across global warehouses and logistics operations.</p>
         <p>My work spans the full ML lifecycle — from architecting model pipelines and fine-tuning pretrained networks, to Zebra AI Suite SDK integration, performance benchmarking, and on-device TFLite deployment. I thrive at the intersection of rigorous research and real-world engineering constraints.</p>
         <p>Outside of Zebra, I'm independently researching transformer-based genomic language models — applying DNABERT-2 to human genome sequence analysis and unsupervised clustering — building on my undergraduate thesis in bioinformatics at BUET.</p>
+        <p>I hold an M.S. in Computer Engineering from Stony Brook University (2023–2024) and a B.Sc. in Computer Science and Engineering from Bangladesh University of Engineering and Technology (BUET), where my undergraduate thesis focused on alignment-free phylogeny reconstruction using maximum likelihood.</p>
         <div class="stat-row">
           <div class="stat"><span class="stat-num">98%</span><div class="stat-label">CV Accuracy</div></div>
           <div class="stat"><span class="stat-num">25%</span><div class="stat-label">Scan Lift</div></div>
@@ -356,10 +358,48 @@ footer { padding: 40px 0; border-top: 1px solid var(--rule); position: relative;
   </div>
 </section>
 
-<section id="projects">
+<section id="education" style="padding: 120px 0; border-top: 1px solid var(--rule);">
   <div class="container">
     <div class="section-header reveal">
       <span class="section-num">03</span>
+      <h2>Education</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">Aug 2023 – Dec 2024</div>
+        <div class="exp-company">Stony Brook University</div>
+        <div class="exp-loc">Stony Brook, NY</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">M.S. in Computer Engineering</div>
+        <ul class="exp-bullets">
+          <li>Relevant Coursework: Deep Learning, Computer Vision, Pattern Recognition, Stochastic Systems</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">2015 – April 2019</div>
+        <div class="exp-company">Bangladesh University of Engineering and Technology (BUET)</div>
+        <div class="exp-loc">Dhaka, Bangladesh</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">B.Sc. in Computer Science and Engineering</div>
+        <ul class="exp-bullets">
+          <li>Undergraduate thesis: An Alignment-free Method for Phylogeny Reconstruction Using Maximum Likelihood, supervised by Dr. Atif Hasan Rahman.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
       <h2>Selected <em>Projects</em></h2>
       <div class="section-rule"></div>
     </div>
@@ -395,7 +435,7 @@ footer { padding: 40px 0; border-top: 1px solid var(--rule); position: relative;
 <section id="research">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-num">04</span>
+      <span class="section-num">05</span>
       <h2>Independent <em>Research</em></h2>
       <div class="section-rule"></div>
     </div>
@@ -416,7 +456,7 @@ footer { padding: 40px 0; border-top: 1px solid var(--rule); position: relative;
 <section id="publications">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-num">05</span>
+      <span class="section-num">06</span>
       <h2>Publications</h2>
       <div class="section-rule"></div>
     </div>
@@ -456,7 +496,7 @@ footer { padding: 40px 0; border-top: 1px solid var(--rule); position: relative;
 <section id="contact">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-num">06</span>
+      <span class="section-num">07</span>
       <h2>Get In <em>Touch</em></h2>
       <div class="section-rule"></div>
     </div>
@@ -512,17 +552,5 @@ footer { padding: 40px 0; border-top: 1px solid var(--rule); position: relative;
   </div>
 </footer>
 
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 100);
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  reveals.forEach(el => io.observe(el));
-</script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const reveals = document.query
